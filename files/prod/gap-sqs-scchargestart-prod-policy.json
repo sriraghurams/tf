@@ -1,0 +1,18 @@
+{
+    "Version": "2012-10-17",
+    "Id": "${var.terraform-queue}-policy",
+    "Statement": [
+      {
+        "Sid": "AllowReadDelete_machine_479bba97-90d5-4056-b2fd-0ee755c56dd3",
+        "Effect": "Allow",
+        "Principal": {
+           "AWS": "*"
+        },
+        "Action": [
+          "sqs:ReceiveMessage",
+          "sqs:SendMessage"
+        ],
+        "Resource": "arn:aws:sqs:us-east-1:889283944499:ctgap-scchargestart-sqs-prod"
+      }
+    ]
+  }

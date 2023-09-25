@@ -1,0 +1,19 @@
+{
+    "Id": "Policy1626380061397",
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Sid": "Stmt1626380059428",
+        "Action": "s3:*",
+        "Effect": "Allow",
+        "Resource": "arn:aws:s3:::ctgap-stage-ev-carbon-footprint",
+        "Principal": {
+          "AWS": [
+            "arn:aws:sts::889283944499:assumed-role/ctgap-dev-role/nagavelu.gilaka@toyota.com",
+            "arn:aws:iam::889283944499:role/watttime-api-production-us-east-1-lambdaRole",
+            "arn:aws:iam::889283944499:role/ec2_gitlab_runner_ssm_role"
+        ]
+        }
+      }
+    ]
+  }

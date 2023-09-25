@@ -1,0 +1,28 @@
+{
+    "Version": "2008-10-17",
+    "Id": "__default_policy_ID",
+    "Statement": [
+      {
+        "Sid": "__default_statement_ID",
+        "Effect": "Allow",
+        "Principal": {
+          "AWS": [
+            "*",
+            "arn:aws:iam::837432931185:role/ctp-ecs-task-role-subscr"
+          ]
+        },
+        "Action": [
+          "SNS:GetTopicAttributes",
+          "SNS:SetTopicAttributes",
+          "SNS:AddPermission",
+          "SNS:RemovePermission",
+          "SNS:DeleteTopic",
+          "SNS:Subscribe",
+          "SNS:ListSubscriptionsByTopic",
+          "SNS:Publish",
+          "SNS:Receive"
+        ],
+        "Resource": "arn:aws:sns:us-east-1:889283944499:ev-stage-use-econnect-adapter-payloads-sns"
+      }
+    ]
+  }

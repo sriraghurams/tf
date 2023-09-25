@@ -1,0 +1,17 @@
+module "sm-tgw" {
+    source                         = "../../modules/tgw"
+    env                            = "stage"
+    amazon_side_asn                = 65000
+    #private-subnets-ids            = ["subnet-01efb6fc3860a13f9", "subnet-02aa8ce7170630fd6"]
+    private-subnets-ids            = "${module.stage-smartpath-vpc.private_subnets}"
+    vpc-id                         = "${module.stage-smartpath-vpc.vpc_id}"
+    network_acl_id                 = "${module.stage-smartpath-vpc.private_nacl_id}"
+    #private_route_table_ids        = "${module.stage-smartpath-vpc.private_route_table_ids}"
+    vpc_main_route_table_id        = "${module.stage-smartpath-vpc.vpc_main_route_table_id}"
+    # ec2_transit_gateway_id         = "${module.tgw.ec2_transit_gateway_id}"
+    #vpc-id                         = "vpc-0080090e05d2e0654"
+    ct-smartpath-nonprod-vpc-cidr  = "10.40.0.0/16"
+    gap-smartpath-nonprod-vpc-cidr = "10.214.0.0/16"
+    cross-account-id               = "837432931185"
+
+}

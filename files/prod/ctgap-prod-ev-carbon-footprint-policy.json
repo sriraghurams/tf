@@ -1,0 +1,17 @@
+{
+    "Id": "Policy1626380061397",
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Sid": "Stmt1626380059428",
+        "Action": "s3:*",
+        "Effect": "Allow",
+        "Resource": "arn:aws:s3:::ctgap-prod-ev-carbon-footprint",
+        "Principal": {
+          "AWS": [
+            "arn:aws:iam::105631484425:role/ec2_gitlab_runner_ssm_role"
+          ]
+        }
+      }
+    ]
+  }

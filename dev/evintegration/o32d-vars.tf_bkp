@@ -1,0 +1,40 @@
+module "o32d-stage" {
+    source            = "../../modules/o32d"
+    app_name          = "o32d"
+    env               = "dev"
+    region            = "us-east-1"
+    subnet_ids        = "${module.stage.private_subnets}"
+    vpc_id            = "${module.stage.vpc_id}"
+    # cmpgnmgt_desired_count  =
+    # cmpgnmgt_min_capacity   = 
+    # cmpgnmgt_max_capacity  =
+    # deploy_cmpgnmgt         =
+    # refresh_cmpgnmgt        =  
+    config_profile          = "o32dstgeast"
+    cmpgnmgt_image          = "image"
+    appd_access_key         ="test"
+    appd_endpoint           = "tc-preprod.saas.appdynamics.com"
+    appd_account_name       = "tc-preprod"
+    vpc_cidr                = ["10.211.0.0/16"]
+    ecs_task_execution_role  = "ecsTaskExecutionRole"
+    ecs_task_role            = "o32d-ecs-task-role-subscr"
+    account_id               = 889283944499
+
+
+    admnmgt_image            = "image"
+    # admnmgt_desired_count   
+    # admnmgt_min_capacity
+    # admnmgt_max_capacity
+    # deploy_admnmgt
+    # refresh_admnmgt
+    
+    evtlsnr_image            = "image"
+    # evtlsnr_desired_count
+    # evtlsnr_min_capacity
+    # evtlsnr_max_capacity
+    # deploy_evtlsnr
+    # refresh_evtlsnr
+
+
+
+}
